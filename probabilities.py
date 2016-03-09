@@ -64,7 +64,7 @@ def P(rope1=None, rope2=None, rope3=None, taken_ropes=set()):
         P_after(rope1, rope2, rope3, taken_ropes)
     else:
         P_before(rope1, rope2, rope3, taken_ropes)
-
+print(P_after(6,7,10,set([2])))
 
 def notP(rope1=None, rope2=None, rope3=None):
     pass    

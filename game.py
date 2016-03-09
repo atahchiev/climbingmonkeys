@@ -2,7 +2,7 @@ from constants import *
 import probabilities
 
 DEFAULT_BOARD = {2: 0, 3: 0, 4: 0, 5: 0, 6: 0,
-            7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0}
+                 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0}
 
 my_ropes = DEFAULT_BOARD
 its_ropes = DEFAULT_BOARD
@@ -12,8 +12,8 @@ finished_ropes = {}
 
 class Board:
 
-    def __init__(self, board=DEFAULT_BOARD  ):
-        self.board = board
+    def __init__(self, board=DEFAULT_BOARD):
+        self.board = dict(board)
 
     def sum_evaluation(player_ropes):
         S = 0
@@ -62,14 +62,15 @@ class Player(Board):
         super().__init__(board)
         self.turn = turn
 
-    def __not__(self):
+    @property
+    def change_turn(self):
         self.turn = not self.turn
-        print(self.turn)
-        return self
+
+Board.get_ropes_behind
 
 player1 = Player(DEFAULT_BOARD, True)
 player2 = Player(DEFAULT_BOARD, False)
-player1 = not player1
-# print(player1.turn)
+player1.change_turn
+print(player1.turn)
 b = Board()
 # print(b.board)
